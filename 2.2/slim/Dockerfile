@@ -41,7 +41,7 @@ RUN buildDeps=' \
 		| tar -xjC /usr/src/ruby --strip-components=1 \
 	&& cd /usr/src/ruby \
 	&& autoconf \
-	&& ./configure --disable-install-doc \
+	&& ./configure --disable-install-doc --enable-shared \
 	&& make -j"$(nproc)" \
 	&& make install \
 	&& rm -r /usr/src/ruby \

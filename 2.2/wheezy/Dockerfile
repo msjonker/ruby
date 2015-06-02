@@ -13,7 +13,7 @@ RUN apt-get update \
 		| tar -xjC /usr/src/ruby --strip-components=1 \
 	&& cd /usr/src/ruby \
 	&& autoconf \
-	&& ./configure --disable-install-doc \
+	&& ./configure --disable-install-doc --enable-shared \
 	&& make -j"$(nproc)" \
 	&& make install \
 	&& apt-get purge -y --auto-remove bison libgdbm-dev ruby \
